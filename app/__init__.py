@@ -1,6 +1,5 @@
 from flask import Flask
 
-
 # Flask 앱을 생성하고 설정하는 함수
 def create_app():
     app = Flask(__name__)

@@ -1,11 +1,6 @@
-from flask import Flask
+from app import create_app
 
-app = Flask(__name__)
-
-# 라우팅 모듈 등록
-from app.routes import main
-
-app.register_blueprint(main)
+app = create_app()
 
 if __name__ == "__main__":
     app.run()

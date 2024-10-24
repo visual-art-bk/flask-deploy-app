@@ -7,7 +7,7 @@ main = Blueprint("main", __name__)
 def home():
     return """
     <form action="/crawl" method="post">
-        <label>검색할 키워드: </label>
+        <label>검색할 키워드123: </label>
         <input type="text" name="keyword">
         <input type="submit" value="크롤링 시작">
     </form>
