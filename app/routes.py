@@ -3,6 +3,7 @@ from flask import Blueprint, request, send_file
 # 블루프린트 생성
 main = Blueprint("main", __name__)
 
+
 @main.route("/", methods=["GET"])
 def home():
     return """
