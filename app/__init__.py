@@ -1,7 +1,7 @@
 from flask import Flask
 
 
-def creat_app():
+def create_app():
     app = Flask(__name__)
     
      # 라우터 등록

@@ -6,6 +6,9 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
+# 크롬 드라이버 설정 및 페이지 접근
+CHROME_DRIVER_PATH = "/home/kbk/chromedriver-linux64/chromedriver"
+
 def get_web_data(url):
     options = Options()
     options.add_argument("--headless")
@@ -14,7 +17,9 @@ def get_web_data(url):
     
     # ChromeDriver 설정
     # service = Service("/usr/local/bin/chromedriver")  # Render에서 설정한 chromedriver 경로
-    service = Service(ChromeDriverManager().install())    
+    # service = Service(ChromeDriverManager().install())
+    service = service = Service(executable_path=CHROME_DRIVER_PATH)
+    
     driver = webdriver.Chrome(service=service, options=options)
 
     try:

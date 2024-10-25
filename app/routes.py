@@ -1,20 +1,19 @@
 # app/routes.py
 from flask import Blueprint, request, jsonify
-from app.selenium_utils import get_web_data  # Selenium 함수 임포트
-
-
+from app.WebDriverManager import WebDriverManager
+import time
 # 블루프린트 생성
 main = Blueprint('main', __name__)
+wd = WebDriverManager()
+driver = wd.get_driver()
 
 @main.route('/')
 def home():
-    return "Welcome to the Flask App!1"
-
-@main.route('/scrape', methods=['GET'])
-def scrape():
-    url = request.args.get('url')
-    if not url:
-        return jsonify({"error": "URL parameter is required"}), 400
-
-    data = get_web_data(url)  # Selenium 함수 호출
-    return jsonify(data)
+    url = 'https://www.naver.com'
+    print('Test driver 입니다.')
+    driver.get(url)
+    print(url, "열었습니다.")
+    time.sleep(5)
+    wd.close_driver()
+    
+    return "<h1>테스트완료</h1>"

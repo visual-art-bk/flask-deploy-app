@@ -1,6 +1,6 @@
-from app import creat_app
+from app import create_app
 
-app = creat_app()
+app = create_app()
 
 @app.route("/", methods=["GET"])
 def home():
