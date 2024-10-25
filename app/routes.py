@@ -8,7 +8,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def home():
-    return "Welcome to the Flask App!"
+    return "Welcome to the Flask App!1"
 
 @main.route('/scrape', methods=['GET'])
 def scrape():
