@@ -1,6 +1,6 @@
-from flask import Flask
+from init import creat_app
 
-app = Flask(__name__)
+app = creat_app()
 
 @app.route("/", methods=["GET"])
 def home():
