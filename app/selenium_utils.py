@@ -1,8 +1,9 @@
-# app/selenium_utils.py
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 def get_web_data(url):
@@ -12,7 +13,8 @@ def get_web_data(url):
     options.add_argument("--disable-dev-shm-usage")
     
     # ChromeDriver 설정
-    service = Service("/usr/local/bin/chromedriver")  # Render에서 설정한 chromedriver 경로
+    # service = Service("/usr/local/bin/chromedriver")  # Render에서 설정한 chromedriver 경로
+    service = Service(ChromeDriverManager().install())    
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
