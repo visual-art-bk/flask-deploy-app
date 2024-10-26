@@ -10,12 +10,12 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def home():
-    url = 'https://www.naver.com'
-    print('Test driver 입니다.')
+    # url = 'https://www.naver.com'
+    # print('Test driver 입니다.')
     
     # driver.get(url)
     # print(url, "열었습니다.")
     # time.sleep(5)
     # wd.close_driver()
     
-    return "<h1>테스트완료</h1>"
+    return "<h1>테스트완료-도커까지</h1>"
