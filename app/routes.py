@@ -5,17 +5,17 @@ import time
 # 블루프린트 생성
 main = Blueprint('main', __name__)
 
-# wd = WebDriverManager()
-# driver = wd.get_driver()
+wd = WebDriverManager()
+driver = wd.get_driver()
 
 @main.route('/')
 def home():
-    # url = 'https://www.naver.com'
-    # print('Test driver 입니다.')
+    url = 'https://www.naver.com'
+    print('Test driver 입니다.')
     
-    # driver.get(url)
-    # print(url, "열었습니다.")
-    # time.sleep(5)
-    # wd.close_driver()
+    driver.get(url)
+    print(url, "열었습니다.")
+    time.sleep(5)
+    wd.close_driver()
     
-    return "<h1>테스트완료-도커까지</h1>"
+    return "<h1>테스트완료-도커까지123</h1>"
